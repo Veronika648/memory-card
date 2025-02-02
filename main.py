@@ -1,6 +1,7 @@
 import random
 
 from PyQt6.QtWidgets import *
+import menu
 
 import main2
 from main2 import *
@@ -78,7 +79,7 @@ def next_func():
     result_lbl.hide()
 
 next_btn.clicked.connect(next_func)
-
+menu_btn.clicked.connect(menu.menu_window)
 
 
 window.setLayout(main_line)
