@@ -17,6 +17,7 @@ quest_lbl = QLabel("Яблуко")
 group = QGroupBox("Варіанти відповідей")
 answer1_btn = QRadioButton("building")
 answer2_btn = QRadioButton("apple")
+answer3_btn = QRadioButton("щось")
 result_lbl = QLabel("Результат")
 result_lbl.hide()
 next_btn = QPushButton("Наступне запитання" )
@@ -30,12 +31,12 @@ h1.addWidget(rest_btn)
 h1.addWidget(spin)
 h1.addWidget(min_lbl)
 main_line.addLayout(h1)
-
 main_line.addWidget(quest_lbl)
 
 group_line = QVBoxLayout()
 group_line.addWidget(answer1_btn)
 group_line.addWidget(answer2_btn)
+group_line.addWidget(answer3_btn)
 group_line.addWidget(result_lbl)
 group.setLayout(group_line)
 main_line.addWidget(group)
@@ -43,7 +44,7 @@ main_line.addWidget(next_btn)
 main_line.addWidget(answer_btn)
 
 
-answers = [answer1_btn, answer2_btn]
+answers = [answer1_btn, answer2_btn, answer3_btn]
 
 def set_quest():
     random.shuffle(answers)
@@ -51,6 +52,7 @@ def set_quest():
     quest_lbl.setText(quest["Запитання"])
     answers[0].setText(quest["Правильна відповідь"])
     answers[1].setText(quest["Неправильна відповідь1"])
+    answers[2].setText(quest["Неправильна відповідь2"])
 
 set_quest()
 

@@ -14,6 +14,9 @@ def menu_window():
     fouls_ans_input = QLineEdit()
     fouls_ans2_lbl = QLabel("Неправильна відповідь 2")
     fouls_ans2_input = QLineEdit()
+
+    dodatu_btn = QPushButton("Додати питання")
+
     main_line = QVBoxLayout()
 
     h1 = QHBoxLayout()
@@ -35,6 +38,7 @@ def menu_window():
     h4.addWidget(fouls_ans2_lbl)
     h4.addWidget(fouls_ans2_input)
     main_line.addLayout(h4)
+    main_line.addWidget(dodatu_btn)
 
 
 
@@ -47,6 +51,7 @@ def menu_window():
         "Неправильна відповідь2": fouls_ans2_input.text()
     })
 
+    dodatu_btn.clicked.connect(add_func)
 
 
 
